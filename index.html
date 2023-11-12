@@ -1,100 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    #terminal {
-      height: 90vh;
-    }
-    .options {
-      padding: 0.75em;
-    }
-    .info {
-      float: right;
-    }
-    #connect {
-      margin-right: 2em;
-    }
-    label.checkbox {
-      margin-right: 1em;
-    }
-  </style>
-  <script type="module" crossorigin src="./assets/index.15524ea3.js"></script>
-  <link rel="stylesheet" href="./assets/index.ff373be6.css">
-<link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyanOS GUI 🐱</title>
+    
+    <script type="module" crossorigin src="./assets/index.6e4b74aa.js"></script>
+    <link rel="stylesheet" href="./assets/index.14e76130.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
 <body>
-<div class="options">
-  <label for="ports">Port:</label>
-  <select id="ports">
-    <option value="prompt">Click 'Connect' to add a port...</option>
-  </select>
-  <button id="connect">Connect</button>
 
-  <button id="download">Download output</button>
-  <button id="clear">Clear output</button>
+<div class="main-wrapper">
+  <div class="main-content">
 
-  <div class="info">
-    <a id="polyfill_switcher"></a>
-  </div>
+    <div class="header">
+      <img src="images/logo/icon_square.png" alt="Logo" class="logo" id="logoButton">
+      <div class="speech-bubble" id="connectBubble">Click to connect!</div>
+      <h1>Nyan Keys - Keyboard Interface</h1>
+    </div>
 
-  <br>
+    <div id="notSupported" class="hidden content">
+      <h3>Your browser does not support the Web Serial API. Use Chrome/Chromium</h3>
+    </div>
 
-  <label for="baudrate">Baud rate:</label>
-  <select id="baudrate">
-    <option value="9600">9600</option>
-    <option value="14400">14400</option>
-    <option value="19200">19220</option>
-    <option value="28800">28800</option>
-    <option value="38400">38400</option>
-    <option value="57600">57600</option>
-    <option value="115200" selected>115200</option>
-    <option value="230400">230400</option>
-    <option value="460800">460800</option>
-    <option value="921600">921600</option>
-    <option value="custom">Custom</option>
-  </select>
-  <input id="custom_baudrate" type="number" min="1" placeholder="Enter baudrate..." hidden>
-  <label for="databits">Data bits:</label>
-  <select id="databits">
-    <option value="7">7</option>
-    <option value="8" selected>8</option>
-  </select>
-  <label for="parity">Parity:</label>
-  <select id="parity">
-    <option value="none" selected>None</option>
-    <option value="even">Even</option>
-    <option value="odd">Odd</option>
-  </select>
-  <label for="stopbits">Stop bits:</label>
-  <select id="stopbits">
-    <option value="1" selected>1</option>
-    <option value="2">2</option>
-  </select>
-  <input id="rtscts" type="checkbox">
-  <label for="rtscts">Hardware flow control</label>
+    <div class="content">
+      <h2>NyanOS (NOS) Graphical User Interface</h2>
+      <p>A basic interface to your keyboard - Click the nyan cat to get started</p>
+      <div id="terminal"></div>
+    </div>
 
-  <br>
+    <div class="footer">
+      <p>&copy; 2023 Portland.HODL ⚡</p>
+    </div>
 
-  <input id="echo" type="checkbox">
-  <label class="checkbox" for="echo">Local echo</label>
-  <input id="enter_flush" type="checkbox">
-  <label class="checkbox" for="enter_flush">Flush on enter</label>
-  <input id="convert_eol" type="checkbox">
-  <label class="checkbox" for="convert_eol">Convert EOL</label>
-  <input id="autoconnect" type="checkbox">
-  <label class="checkbox" for="autoconnect">Automatically connect</label>
-
-  <div class="info">
-    <a href="https://github.com/GoogleChromeLabs/serial-terminal">Source Code on GitHub</a>
   </div>
 </div>
-<div id="terminal"></div>
+
 
 </body>
 </html>
